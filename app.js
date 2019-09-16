@@ -3,7 +3,7 @@ var apiKey = "oXYug8o8rYFHQV2yGSEEqpjq6rOGoz17";
 
 $("#search").on("click", function(){
 
-    var userInput = $("#searchTerm").text();
+    var userInput = $("#searchTerm").val();
     var filter = "";
     var numResults = 10;
     var pages = numResults / 10;
@@ -50,7 +50,8 @@ $("#clear").on("click", function() {
 });
 
 function writeResults(results){
+    console.log(results.length);
     for(var i=0; i < results.length; i++){
-        $("#results").text(results[i].headline);
+        $("#results").append("<div>" + results[i].headline.main + "</div>");
     }
 }
