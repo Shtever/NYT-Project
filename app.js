@@ -9,6 +9,7 @@ $("#search").on("click", function(){
     var pages = numResults / 10;
     var startYear = $("#startYear").val();
     var endYear = $("#endYear").val();
+    var results = [];
     var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + userInput + "&api-key=" + apiKey;
 
     console.log(queryUrl);
@@ -36,10 +37,20 @@ $("#search").on("click", function(){
     .then(function (response){
         console.log(response)
     
+        results = (response.response.docs)
+        writeResults(results)
+        
     });
+
     
 });
 
 $("#clear").on("click", function() {
     $("#results").empty();
 });
+
+function writeResults(results){
+    for(var i=0; i < results.length; i++){
+        $("#results").text(results[i].headline);
+    }
+}
