@@ -1,0 +1,17 @@
+body {
+    margin: 0 auto;
+    background: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    background: rgb(31, 31, 78);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 75px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 40px;
+}
+
